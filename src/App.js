@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
 
-function App() {
+const App = () => {
+  const name = "Wandu";
+  const isNameShowing = true;
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Hello, {2 + 2}!</h1>
+      {isNameShowing ? (
+        <>
+          <h1>{name}</h1>
+        </>
+      ) : (
+        <>
+          <h1>{"There is no name here"}</h1>
+        </>
+      )}
     </div>
   );
-}
+};
 
 export default App;
