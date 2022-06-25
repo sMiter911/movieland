@@ -1,12 +1,12 @@
 import logo from "./logo.svg";
 import "./App.css";
 
-const Person = () => {
+const Person = (props) => {
   return (
     <>
-      <h1>Name: Wandu</h1>
-      <h2>Surname: Mathunjwa</h2>
-      <h3>Age: 34</h3>
+      <h1>Name: {props.name}</h1>
+      <h2>Surname: {props.lastName}</h2>
+      <h3>Age: {props.age}</h3>
     </>
   );
 };
@@ -17,7 +17,8 @@ const App = () => {
 
   return (
     <div className="App">
-      <Person />
+      <Person name={"Wandu"} lastName={"Mathunjwa"} age={34} />
+      <Person name={"Sakhile"} lastName={"Mathunjwa"} age={20} />
     </div>
   );
 };
