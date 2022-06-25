@@ -1,24 +1,23 @@
-import logo from "./logo.svg";
 import "./App.css";
-
-const Person = (props) => {
-  return (
-    <>
-      <h1>Name: {props.name}</h1>
-      <h2>Surname: {props.lastName}</h2>
-      <h3>Age: {props.age}</h3>
-    </>
-  );
-};
+import { useState, useEffect } from "react";
 
 const App = () => {
-  const name = "Wandu";
-  const isNameShowing = true;
+  // whenever we have 'use' in front of a function, it is a hook
+  const [counter, setCounter] = useState(0);
+
+  useEffect(() => {
+    setCounter(100);
+  }, []);
 
   return (
     <div className="App">
-      <Person name={"Wandu"} lastName={"Mathunjwa"} age={34} />
-      <Person name={"Sakhile"} lastName={"Mathunjwa"} age={20} />
+      <button onClick={() => setCounter((prevCount) => prevCount - 1)}>
+        -
+      </button>
+      <h1>{counter}</h1>
+      <button onClick={() => setCounter((prevCount) => prevCount + 1)}>
+        +
+      </button>
     </div>
   );
 };
